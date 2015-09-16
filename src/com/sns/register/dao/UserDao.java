@@ -1,6 +1,7 @@
 package com.sns.register.dao;
 
 import com.common.MD5Util;
+import com.common.base.DateUtil;
 import com.sns.login.model.User;
 
 public class UserDao {
@@ -20,6 +21,7 @@ public class UserDao {
     public boolean addUser(User user){
         user.set("password",getEncryptPwd(user.get("password").toString()));
         user.set("name",user.get("email"));
+        //user.set("ctime",DateUtil.getCurrentTime());
         return user.save();
     }
 }

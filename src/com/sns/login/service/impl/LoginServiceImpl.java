@@ -11,4 +11,9 @@ public class LoginServiceImpl implements LoginService{
         boolean flag=loginDao.validateUser(user);
         return flag;
     }
+    @Override
+    public String getUserId(User user) {
+        String uid=loginDao.getUid(user);
+        return uid;
+    }
 }

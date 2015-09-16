@@ -19,4 +19,14 @@ public class LoginDao {
         }
         return false;
     }
+    public String getUid(User user){
+        Object[] params=new Object[2];
+        params[0]=user.get("email");
+        params[1]=MD5Util.getMD5(user.get("password").toString());
+        User u=User.dao.findFirst("select id from users where email=? and password=?", params);
+        if(null!=u){
+            return u.getStr("id");
+        }
+        return "not found";
+    }
 }

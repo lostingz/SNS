@@ -16,6 +16,7 @@ public class LoginController extends Controller{
         boolean flag=loginService.validate(user);
         String result="";
         if(flag){
+            setSessionAttr("uid",loginService.getUserId(user));
             result="登录成功";
         }else{
             result="登录失败";

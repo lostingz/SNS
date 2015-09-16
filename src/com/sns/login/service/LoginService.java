@@ -9,4 +9,5 @@ public interface LoginService {
      * @return 验证成功返回true，否则返回false
      */
     public boolean validate(User user);
+    public String getUserId(User user);
 }
