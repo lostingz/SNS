@@ -16,4 +16,7 @@ public class LoginServiceImpl implements LoginService{
         String uid=loginDao.getUid(user);
         return uid;
     }
+    public User getUserInfoByUid(String uid){
+        return loginDao.getUserInfo(uid);
+    }
 }

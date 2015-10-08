@@ -10,6 +10,7 @@ import com.jfinal.core.JFinal;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.jfinal.render.ViewType;
 import com.sns.interceptor.AuthInterceptor;
 
 /**
@@ -32,6 +33,7 @@ public class SNSConfig extends JFinalConfig {
     public void configRoute(Routes me) {
         me.add("/login", com.sns.login.controller.LoginController.class,"/");
         me.add("/register", com.sns.register.controller.RegisterController.class,"/");
+        me.add("/viewer", com.spider.ImageViewerController.class,"/");
     }
     /**
      * 全局插件配置

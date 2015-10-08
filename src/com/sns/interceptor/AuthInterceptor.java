@@ -12,9 +12,10 @@ public class AuthInterceptor implements Interceptor {
 
     @Override
     public void intercept(Invocation invocation) {
-        System.out.println("有权限,操作开始");
+        System.out.println("有权限,执行校验");
+        //执行权限校验代码
+        System.out.println("权限通过，开始执行程序");
         invocation.invoke();
         System.out.println("操作结束");
     }
-
 }

@@ -41,22 +41,7 @@ public class ImageUtil {
         }
     }
     public static void downloadImage(String url,String param,String filePath){
-        url = url+"/"+param;
-        Document doc = null;
-        try {
-            doc = Jsoup.connect(url).timeout(5000).get();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
-        Elements elements=doc.select("img");
-        List<String> imageIdList=new ArrayList<String>();
-        for (Element element : elements) {
-            String src=element.attr("src");
-            if(src.indexOf("http://")!=-1){
-                imageIdList.add(src);
-            }
-        }
+        List<String> imageIdList=getImageUrl(url, param);
         int length=imageIdList.size();
         for (int i = 0; i < length; i++) {
             String imageUrl=imageIdList.get(i);
@@ -68,5 +53,24 @@ public class ImageUtil {
             ImageUtil.DownloadImageByUrl(imageUrl,fileName+extention,filePath);
             System.out.println(fileName+extention+" finished!");
         }
+    }
+    public static List<String> getImageUrl(String url,String param){
+        url = url+"/"+param;
+        Document doc = null;
+        List<String> imageIdList=new ArrayList<String>();
+        try {
+            doc = Jsoup.connect(url).timeout(5000).get();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return imageIdList;
+        }
+        Elements elements=doc.select("img");
+        for (Element element : elements) {
+            String src=element.attr("src");
+            if(src.indexOf("http://")!=-1){
+                imageIdList.add(src);
+            }
+        }
+        return imageIdList;
     }
 }

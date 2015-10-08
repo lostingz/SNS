@@ -10,4 +10,5 @@ public interface LoginService {
      */
     public boolean validate(User user);
     public String getUserId(User user);
+    public User getUserInfoByUid(String uid);
 }
