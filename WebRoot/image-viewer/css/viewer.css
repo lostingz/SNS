@@ -1,1 +1,29 @@
 @CHARSET "UTF-8";
+.center{
+    margin:0px auto;
+    text-align: center;
+}
+.website{
+    margin-top:40px;
+}
+.viewer{
+    height: 80%;
+    border: solid red 1px;
+    display: block;
+    min-width:800px;
+    margin: 10px 10%;
+}
+.list{
+    text-align: left;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+}
+ul li div{
+    margin: 2px;
+}
+ul li img{
+    height:100px;
+    width:61.8px;
+}
