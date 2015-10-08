@@ -34,6 +34,7 @@ public class SNSConfig extends JFinalConfig {
         me.add("/login", com.sns.login.controller.LoginController.class,"/");
         me.add("/register", com.sns.register.controller.RegisterController.class,"/");
         me.add("/viewer", com.spider.ImageViewerController.class,"/");
+        me.add("/index", com.sns.index.IndexController.class,"/");
     }
     /**
      * 全局插件配置
