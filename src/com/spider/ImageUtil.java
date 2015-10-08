@@ -71,6 +71,7 @@ public class ImageUtil {
                 imageIdList.add(src);
             }
         }
+        System.out.println("获取到图片"+imageIdList.size()+"张");
         return imageIdList;
     }
 }

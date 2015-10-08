@@ -3,8 +3,8 @@
  */
 $(function(){
 	$('#website').click(function(){
-		var dataUrl=$('#dataUrl').val();
-		$("#imageList").remove();
+		var dataUrl="http://"+$('#dataUrl').val();
+		$("#imageList").empty();
 		loadImageList(dataUrl);
 	});
 });
